@@ -89,7 +89,7 @@ a:hover{
   #learnMoreBtn:hover{
       cursor: pointer;
   }
-  #loadingGIF{
+  .loadingGIF{
       display: grid;
       place-items: center;
   }

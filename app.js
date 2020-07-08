@@ -6,7 +6,7 @@ const parkFullName = document.getElementById('parkFullName');
 const description = document.getElementById('description');
 const parkLocation = document.getElementById('location');
 const modalContent = document.querySelector('.modalContent');
-const loadingImg = document.getElementById('loadingGIF');
+const loadingImg = document.querySelector('.loadingGIF');
 //When a user click on a state, this functions triggers
 function onClick(){
     
@@ -14,9 +14,10 @@ function onClick(){
     let stateCode = event.target.id;
     let stateName = event.target.getAttribute('title');
    
-
-    modal.style.display = "block";
+    loadingImg.style.display="grid";
     
+    modal.style.display = "block";
+
         // modal.classList.add('show');
         // modal.classList.remove('hide');
 
@@ -42,6 +43,7 @@ function onClick(){
         // modal.classList.add('hide');
         modal.style.display = "none";
         parks.innerHTML = "";
+
         });
 }
 
