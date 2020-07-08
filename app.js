@@ -5,8 +5,8 @@ const parks = document.getElementById('parks');
 const parkFullName = document.getElementById('parkFullName');
 const description = document.getElementById('description');
 const parkLocation = document.getElementById('location');
-
-
+const modalContent = document.querySelector('.modalContent');
+const loadingImg = document.getElementById('loadingGIF');
 //When a user click on a state, this functions triggers
 function onClick(){
     
@@ -16,6 +16,7 @@ function onClick(){
    
 
     modal.style.display = "block";
+    
         // modal.classList.add('show');
         // modal.classList.remove('hide');
 
@@ -24,7 +25,7 @@ function onClick(){
     fetch('https://developer.nps.gov/api/v1/parks?statecode='+stateCode+'&api_key=ymoGeFH1NkQWm8tw6p1bSgpIETUX31jXzJNDMwIo')
     .then(res => res.json() )
     .then(data => data.data.forEach(element => {
-        
+        loadingImg.style.display="none";
         parks.insertAdjacentHTML("beforeend", 
         "<div class='park'>"+ 
             "<img src='"+element.images[0].url+"' width='300' height='200'>"+
