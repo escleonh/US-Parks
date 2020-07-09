@@ -1,6 +1,6 @@
 @media only screen and (max-width:580px){
     svg{
-        transform: scale(1.7);
+        
     }
     .loadingGIF{
         transform: scale(.5);
@@ -12,7 +12,10 @@ a:hover{
     cursor: pointer;
 
 }
+svg{
+    border: 1px solid red;
 
+}
 h1, h2{
     text-align: center;
     display: block;
