@@ -7,7 +7,6 @@ const description = document.getElementById('description');
 const parkLocation = document.getElementById('location');
 const modalContent = document.querySelector('.modalContent');
 const loadingImg = document.querySelector('.loadingGIF');
-
 //When a user click on a state, this functions triggers
 function onClick(){
     
@@ -19,18 +18,17 @@ function onClick(){
     modal.style.display = "block";
 
 
-    modalTitle.innerHTML= "<h2>Parks in "+stateName+"</h2>";
+    modalTitle.innerHTML= "<h3>Parks in "+stateName+"</h3>";
 
     fetch('https://developer.nps.gov/api/v1/parks?statecode='+stateCode+'&api_key=ymoGeFH1NkQWm8tw6p1bSgpIETUX31jXzJNDMwIo')
     .then(res => res.json() )
     .then(data => data.data.forEach(element => {
-
         loadingImg.style.display="none";
         parksContainer.insertAdjacentHTML("beforeend", 
         "<div class='parkWrapper'>"+ 
             "<img src='"+element.images[0].url+"' width='300' height='200'>"+
-            "<p>"+ element.fullName+"</p>"+
-            "<p>"+ element.addresses[0].city+", "+element.addresses[0].stateCode+"</p>"+
+            "<p><strong>"+ element.fullName+"</strong></p>"+
+            "<p><em>"+ element.addresses[0].city+", "+element.addresses[0].stateCode+"</em></p>"+
             "<p>"+ element.description +"</p>"+
             "<a href='"+element.url+"' id='learnMoreBtn'>Learn More</a>"+
         "</div>");

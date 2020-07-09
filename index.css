@@ -1,8 +1,18 @@
+@media only screen and (max-width:580px){
+    svg{
+        transform: scale(1.7);
+    }
+    .loadingGIF{
+        transform: scale(.5);
+    }
+}
+
 a:hover{
     fill: rgb(199, 59, 8);
     cursor: pointer;
 
 }
+
 h1, h2{
     text-align: center;
     display: block;
@@ -11,7 +21,7 @@ h1, h2{
 }
 .map{
     fill: rgb(17, 7, 61);
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
