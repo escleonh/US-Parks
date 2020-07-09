@@ -1,25 +1,36 @@
 a:hover{
-    fill: coral;
-    cursor: grab;
+    fill: rgb(199, 59, 8);
+    cursor: pointer;
+
+}
+h1, h2{
+    text-align: center;
+    display: block;
+    font-family: 'Lato', sans-serif;
+
 }
 .map{
     fill: rgb(17, 7, 61);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .modal{
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 1;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0,0,0,0.4);
-    /* overflow: hidden; */
    
 }
 .modalContent{
     background-color: #fefefe;
-    width: 80%;
-    height: 80vh;
+    max-width: 80vh;
+    max-height: 80vh;
     padding: 20px;
     border: 1px solid #888; 
     margin-left: auto;
@@ -29,7 +40,6 @@ a:hover{
     margin-bottom: 50px;
     overflow: scroll;
 
-
 }
 .show{
     display: block;
@@ -37,27 +47,26 @@ a:hover{
 .hide{
     display: none;
 }
-/* The Close Button */
-.close {
+.closeBtn {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
   
-  .close:hover,
-  .close:focus {
+.closeBtn:hover,
+.closeBtn:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
-  #parks{
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-  }
+}
+#parksContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
   
-  .park{
+.parkWrapper{
     border: 1px solid lightgrey;
     border-radius: 10px;
     max-width: 300px;
@@ -68,28 +77,25 @@ a:hover{
     margin: 0 20px 40px;
     padding: 15px;
     box-shadow: 1px 2px 1px lightgrey;
+}
 
-
-  }
-  h2{
-      text-align: center;
-      display: block;
-  }
   
-  #learnMoreBtn{
-      border-radius: 15px;
-      background-color: rgb(17, 7, 61);
-      width: 100px;
-      height: 25px;
-      display: grid;
-      place-items: center;
-      color: white;
-      text-decoration: none;
-  }
-  #learnMoreBtn:hover{
-      cursor: pointer;
-  }
-  .loadingGIF{
-      display: grid;
-      place-items: center;
-  }
+#learnMoreBtn{
+    border-radius: 15px;
+    background-color: rgb(17, 7, 61);
+    width: 100px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    color: white;
+    text-decoration: none;
+}
+#learnMoreBtn:hover{
+    cursor: pointer;
+}
+.loadingGIF{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
