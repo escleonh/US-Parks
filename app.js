@@ -1,5 +1,6 @@
 const modal = document.querySelector('.modal');
-const closeBtn = document.querySelector('.closeBtn');
+const closeIcon = document.querySelector('.closeIcon');
+const modalCloseBtn = document.getElementById('modalCloseBtn');
 const modalTitle = document.querySelector('.modalTitle');
 const parksWrapper = document.getElementById('parksWrapper');
 const parkFullName = document.getElementById('parkFullName');
@@ -24,6 +25,7 @@ function onClick(){
     .then(res => res.json() )
     .then(data => data.data.forEach(element => {
         loadingImg.style.display="none";
+        modalCloseBtn.style.display= "block";
         parksContainer.insertAdjacentHTML("beforeend", 
         "<div class='parkWrapper'>"+ 
             "<img src='"+element.images[0].url+"' width='300' height='200'>"+
@@ -31,14 +33,26 @@ function onClick(){
             "<p><em>"+ element.addresses[0].city+", "+element.addresses[0].stateCode+"</em></p>"+
             "<p>"+ element.description +"</p>"+
             "<a href='"+element.url+"' id='learnMoreBtn'>Learn More</a>"+
+            
         "</div>");
 
     }));
 
-    closeBtn.addEventListener("click", function(){
+    closeIcon.addEventListener("click", function(){
         if(parksContainer.innerHTML != ""){
         modal.style.display = "none";
         parksContainer.innerHTML = "";
+        modalCloseBtn.style.display= "none";
+
+        }
+
+    });
+    modalCloseBtn.addEventListener("click", function(){
+        if(parksContainer.innerHTML != ""){
+        modal.style.display = "none";
+        parksContainer.innerHTML = "";
+        modalCloseBtn.style.display= "none";
+
         }
 
     });
